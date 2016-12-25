@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../compiled/flipclock.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="../compiled/flipclock.js"></script>	
+	</head>
+	<body>
+        
+        <style>
+            body{
+                background-image: url(christine_and_eddie_2.jpg);
+            }
+            .clock
+            {
+              position: absolute;
+              margin: auto;
+              top: 0;*/
+              right: 200;*/
+              bottom: 0;
+              left: 200;*/
+              /*width: 100px;*/
+              height: 100px;
+              /*border-radius: 200px;*/
+            }
+        </style>
+		<div class="clock" style="margin:2em;"></div>
+		
+		<script type="text/javascript">
+			var clock;
+
+			$(document).ready(function() {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+				// Set some date in the past. In this case, it's always been since Jan 1
+				//var pastDate  = new Date(currentDate.getFullYear(), 0, 1);
+                var pastDate = new Date(2013, 12, 18, 12, 0, 0);
+
+				// Calculate the difference in seconds between the future and current date
+				var diff = currentDate.getTime() / 1000 - pastDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter'
+				});
+			});
+		
+        </script>
+        
+	</body>
+</html>
